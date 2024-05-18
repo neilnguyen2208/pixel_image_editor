@@ -1,0 +1,39 @@
+input[type="file"].custom {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.line {
+  border-bottom: 1px solid #c4c4c4;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.normal-button {
+  margin-bottom: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.toolbar {
+  padding-right: 16px;
+  margin-right: 16px;
+  border-right: 1px solid #c4c4c4;
+  height: 80vh;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
