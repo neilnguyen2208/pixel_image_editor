@@ -1,3 +1,8 @@
+h3 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 input[type="file"].custom {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -11,7 +16,7 @@ input[type="file"].custom {
 
 .line {
   border-bottom: 1px solid #c4c4c4;
-  margin-top: 16px;
+  margin-top: 4px;
   margin-bottom: 16px;
 }
 
@@ -27,7 +32,8 @@ input[type="file"].custom {
   padding-right: 16px;
   margin-right: 16px;
   border-right: 1px solid #c4c4c4;
-  height: 80vh;
+  height: calc(100vh - 150px);
+  width: 150px;
 }
 
 .mt-16 {
@@ -35,5 +41,34 @@ input[type="file"].custom {
 }
 
 .mb-16 {
+  margin-bottom: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.canvas-area {
+  width: calc(100vw - 120px);
+}
+
+.canvas-container {
+  min-height: 250px;
+}
+
+.color-pallete {
+  height: 10px;
+}
+
+.small-number-input {
+  width: 50px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.input-field input {
   margin-bottom: 16px;
 }

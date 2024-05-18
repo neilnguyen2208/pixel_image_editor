@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="tools.scss" />
+  </head>
 
-<head>
-    <link rel="stylesheet" href="tools.css">
-</head>
-
-<body>
+  <body>
     <h1>Custom File Input: Image</h1>
     <section class="mb-16">
-        <div id="files">
-            <input type="file" accept="image/png, image/jpeg" onchange="imageData.onChange(event)" />
-        </div>
+      <div id="files">
+        <input
+          type="file"
+          accept="image/png, image/jpeg"
+          onchange="imageData.onChange(event)"
+        />
+      </div>
     </section>
     <div class="line"></div>
 
     <div class="flex">
-        <div class="toolbar">
-            <h3>Zoom tools</h3>
-            <button class="normal-button" onclick="imageData.onZoomOut(event, 0.5)">x0.5</button>
+      <div class="toolbar">
+        <h3>Zoom tools</h3>
+        <div class="line"></div>
 
-            <h3>Generate image</h3>
-            <div class="line"></div>
-            <button class="normal-button" onclick="imageData.onGenerate(event, 32, 32)">32x32</button>
-        </div>
-        <div>
-            <h3>Origin image: </h3>
-            <canvas id="canvas"></canvas>
+        <button class="normal-button" onclick="imageData.onZoomOut(event, 0.5)">
+          x0.5
+        </button>
 
-            <h3>Result: </h3>
-            <canvas id="canvasEdited"></canvas>
+        <h3>Generate tools</h3>
+        <div class="line"></div>
+
+        <div class="input-field">
+          <label>Tile width: </label>
+          <input
+            type="number"
+            class="small-number-input"
+            onchange="setTileWidth(e)"
+            defaultValue="32"
+          />
         </div>
+
+        <div class="input-field">
+          <label>Tile height: </label>
+          <input
+            type="number"
+            class="small-number-input"
+            onchange="setTileHeight(e)"
+            defaultValue="32"
+          />
+        </div>
+
+        <button
+          class="normal-button"
+          onclick="imageData.onGenerate(event, 32, 32)"
+        >
+          32x32
+        </button>
+      </div>
+      <div class="canvas-area">
+        <h3>Origin image:</h3>
+        <div class="canvas-container">
+          <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="line w-full"></div>
+
+        <h3>Color pallete:</h3>
+        <canvas class="color-pallete" id="canvasColorPallete"></canvas>
+
+        <h3>Result:</h3>
+        <div class="canvas-container">
+          <canvas id="canvasEdited"></canvas>
+        </div>
+
+        <button>Save result</button>
+      </div>
     </div>
-</body>
-<script src="tools.js" type="text/javascript"></script>
-
+  </body>
+  <script src="tools.ts" type="text/javascript"></script>
 </html>
